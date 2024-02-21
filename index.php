@@ -42,10 +42,46 @@ if(isset($_GET["length"])){
     <main>
         <div class="container p-4 bg-white rounded mb-5">
             <form action="" method="GET">
-                <div class="d-flex justify-content-between">
+
+                <!--Lunghezza password-->
+                <div class="d-flex justify-content-around">
                     <label for="length">Lunghezza Password:</label>
                     <input type="number" name="length" id="length" value="">
                 </div>
+
+                <!--On/off ripetione caratteri-->
+                <div class="d-flex justify-content-around my-5">
+                    <div>
+                        <span class="" >Consenti ripetizioni di uno o più caratteri:</label>
+                    </div>
+                    <div>
+                        <div class="form-check">
+                            <label class="form-check-label" for="yes-repeat">Si</label>
+                            <input class="form-check-input" type="checkbox" name="yes-repeat" id="yes-repeat" <?= $checked ?? '' ?>>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label" for="no-repeat">No</label>
+                            <input class="form-check-input" type="checkbox" name="no-repeat" id="no-repeat" <?= $checked ?? '' ?>>                  
+                        </div>
+                    </div>
+                </div>
+
+                <!--Selezione tipologia caratteri-->
+                <div class="d-flex justify-content-around">
+                    <div class="form-check">
+                        <label class="form-check-label" for="letters">Lettere</label>
+                        <input class="form-check-input" type="checkbox" name="letters" id="letters" <?= $checked ?? '' ?>>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" for="numbers">Numeri</label>
+                        <input class="form-check-input" type="checkbox" name="numbers" id="numbers" <?= $checked ?? '' ?>>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" for="symbols">Simboli</label>
+                        <input class="form-check-input" type="checkbox" name="symbols" id="symbols" <?= $checked ?? '' ?>>
+                    </div>
+                </div>
+
                 <button type="submit" class="btn btn-primary mt-5">Generate</button>
             </form>           
         </div>
