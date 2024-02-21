@@ -24,6 +24,9 @@ $password = $_SESSION['password'];
             </div>
         </div>
     <?php endif ?>
+    <div class="text-center container my-5">
+        <button type="submit" class="btn btn-primary mt-5"><a href="index.php" class="text-white">Torna indietro<a></button>
+    </div>
     
 </body>
 </html>

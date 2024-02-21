@@ -46,7 +46,7 @@ if(isset($_GET["length"])){
                 <!--Lunghezza password-->
                 <div class="d-flex justify-content-around">
                     <label for="length">Lunghezza Password:</label>
-                    <input type="number" name="length" id="length" value="">
+                    <input type="number" name="length" id="length" value="" placeholder="Minimo 5 componenti" required min="5">
                 </div>
 
                 <!--On/off ripetione caratteri-->
@@ -54,15 +54,9 @@ if(isset($_GET["length"])){
                     <div>
                         <span class="" >Consenti ripetizioni di uno o più caratteri:</label>
                     </div>
-                    <div>
-                        <div class="form-check">
-                            <label class="form-check-label" for="yes-repeat">Si</label>
-                            <input class="form-check-input" type="checkbox" name="yes-repeat" id="yes-repeat" <?= $checked ?? '' ?>>
-                        </div>
-                        <div class="form-check">
-                            <label class="form-check-label" for="no-repeat">No</label>
-                            <input class="form-check-input" type="checkbox" name="no-repeat" id="no-repeat" <?= $checked ?? '' ?>>                  
-                        </div>
+                    <div class="form-check">
+                        <label class="form-check-label" for="yes-repeat">Si</label>
+                        <input class="form-check-input" type="checkbox" name="yes-repeat" id="yes-repeat" <?= $checked ?? '' ?>>
                     </div>
                 </div>
 
@@ -70,15 +64,15 @@ if(isset($_GET["length"])){
                 <div class="d-flex justify-content-around">
                     <div class="form-check">
                         <label class="form-check-label" for="letters">Lettere</label>
-                        <input class="form-check-input" type="checkbox" name="letters" id="letters" <?= $checked ?? '' ?>>
+                        <input class="form-check-input" type="checkbox" name="letters" id="letters">
                     </div>
                     <div class="form-check">
                         <label class="form-check-label" for="numbers">Numeri</label>
-                        <input class="form-check-input" type="checkbox" name="numbers" id="numbers" <?= $checked ?? '' ?>>
+                        <input class="form-check-input" type="checkbox" name="numbers" id="numbers">
                     </div>
                     <div class="form-check">
                         <label class="form-check-label" for="symbols">Simboli</label>
-                        <input class="form-check-input" type="checkbox" name="symbols" id="symbols" <?= $checked ?? '' ?>>
+                        <input class="form-check-input" type="checkbox" name="symbols" id="symbols">
                     </div>
                 </div>
 
