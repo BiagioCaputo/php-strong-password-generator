@@ -1,17 +1,7 @@
 <?php
 
+include __DIR__ .'./utils/functions.php';
 
-//funzione che genera una password casuale di caratteri, numeri e simboli con length pari a quella data come parametro
-function getRandomPassword($length) 
-{
-    $password = '';
-    $prints = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?~@#-_+<>[]{}';
-    for ($i = 0; $i < $length; $i++) {
-        $randomPrintIndex = rand(0, strlen($prints) - 1);
-        $password .= $prints[$randomPrintIndex];
-    }
-    return $password;
-}
 
 //metto in ascolto il form per accogliere la length dell'utente da utilizzare come parametro per la funzione getRandomPassword
 if(isset($_GET["length"])){
