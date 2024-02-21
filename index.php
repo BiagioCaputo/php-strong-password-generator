@@ -1,12 +1,20 @@
 <?php
 
+//avvio session
+session_start();
+
+//file contente le funzioni
 include __DIR__ .'./utils/functions.php';
 
 
-//metto in ascolto il form per accogliere la length dell'utente da utilizzare come parametro per la funzione getRandomPassword
+
+//metto in ascolto il form per accogliere la length dell'utente da utilizzare come parametro per la funzione getRandomPassword,
+//successivamente salvo la variabile ottenuta tramite $SERVER per riutilizzarla nella pagina in cui reinderizzo l'utente
 if(isset($_GET["length"])){
     $length = $_GET['length'];
     $password = getRandomPassword($length);
+    $_SESSION['password'] = $password; 
+    header('Location: success.php');
 }
 
 
@@ -41,14 +49,6 @@ if(isset($_GET["length"])){
                 <button type="submit" class="btn btn-primary mt-5">Generate</button>
             </form>           
         </div>
-        <?php if (isset($password)):?>
-        <div class="container">
-            <div class="alert alert-success" role="alert">
-                <h4 class="alert-heading">Password generata!</h4>
-                <p>Ecco qui la tua password: <?php echo $password  ?></p>
-            </div>
-        </div>
-        <?php endif ?>
     </main>
     
 </body>
