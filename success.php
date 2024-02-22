@@ -1,8 +1,13 @@
 <?php
 //avvio session per recuperare la password e salvarla in una variabile
 session_start();
+if(isset($_SESSION['password'])){
+    $password = $_SESSION['password'];
+    session_destroy();
+} else{
+    header('Location : index.php');
+}
 
-$password = $_SESSION['password'];
 
 ?>
 
@@ -16,14 +21,12 @@ $password = $_SESSION['password'];
     <title>password-generated</title>
 </head>
 <body>
-    <?php if (isset($password)):?>
-        <div class="container py-5">
-            <div class="alert alert-success" role="alert">
-                <h4 class="alert-heading">Password generata!</h4>
-                <p>Ecco qui la tua password: <?php echo $password ?></p>
-            </div>
+    <div class="container py-5">
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Password generata!</h4>
+            <p>Ecco qui la tua password: <?php echo $password ?></p>
         </div>
-    <?php endif ?>
+    </div>
     <div class="text-center container my-5">
         <button type="submit" class="btn btn-primary mt-5"><a href="index.php" class="text-white">Torna indietro<a></button>
     </div>
